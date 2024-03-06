@@ -1,0 +1,17 @@
+{
+  "resources": [
+    {
+      "@type": "passerelle-resource",
+      "resource_type": "passerelle_imio_apims_certificats_population.apimscertificatspopulationconnector",
+      "title": "Certificats Population",
+      "slug": "certificats-population",
+      "description": "Connecteur certificats population",
+      "log_level": "INFO",
+      "access_rights": [],
+      "url": "https://api.imio.be/bosa/v1",
+      "username": "",
+      "password": "",
+      "municipality_token": ""
+    }
+  ]
+}
