@@ -6,7 +6,7 @@
       "title": "Certificats Population",
       "slug": "certificats-population",
       "description": "Connecteur certificats population",
-      "log_level": "INFO",
+      "log_level": "ERROR",
       "access_rights": [],
       "url": "https://api.imio.be/bosa/v1",
       "username": "",
