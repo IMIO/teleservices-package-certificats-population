@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <formdef id="391" url="https://demo-formulaires.guichet-citoyen.be/backoffice/forms/391/">
   <name>Certificat d'un &#233;lecteur belge</name>
-  <url_name>certificat-d-un-electeur-belge</url_name>
+  <url_name>demande-rn-certificat-d-un-electeur-belge</url_name>
   <discussion>false</discussion>
   <detailed_emails>true</detailed_emails>
   <disabled>false</disabled>

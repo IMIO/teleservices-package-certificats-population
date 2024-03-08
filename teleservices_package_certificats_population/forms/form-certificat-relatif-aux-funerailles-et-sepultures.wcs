@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <formdef id="388" url="https://demo-formulaires.guichet-citoyen.be/backoffice/forms/388/">
   <name>Certificat relatif aux fun&#233;railles et s&#233;pultures</name>
-  <url_name>certificat-relatif-aux-funerailles-et-sepultures</url_name>
+  <url_name>demande-rn-certificat-relatif-aux-funerailles-et-sepultures</url_name>
   <discussion>false</discussion>
   <detailed_emails>true</detailed_emails>
   <disabled>false</disabled>

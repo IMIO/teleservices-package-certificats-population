@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <formdef id="384" url="https://demo-formulaires.guichet-citoyen.be/backoffice/forms/384/">
   <name>Certificat de r&#233;sidence ou domicile avec historique</name>
-  <url_name>certificat-de-residence-ou-domicile-avec-historique</url_name>
+  <url_name>demande-rn-certificat-de-residence-ou-domicile-avec-historique</url_name>
   <discussion>false</discussion>
   <detailed_emails>true</detailed_emails>
   <disabled>false</disabled>

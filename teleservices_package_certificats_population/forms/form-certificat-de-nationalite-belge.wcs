@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <formdef id="382" url="https://demo-formulaires.guichet-citoyen.be/backoffice/forms/382/">
   <name>Certificat de nationalit&#233; belge</name>
-  <url_name>certificat-de-nationalite-belge</url_name>
+  <url_name>demande-rn-certificat-de-nationalite-belge</url_name>
   <discussion>false</discussion>
   <detailed_emails>true</detailed_emails>
   <disabled>false</disabled>

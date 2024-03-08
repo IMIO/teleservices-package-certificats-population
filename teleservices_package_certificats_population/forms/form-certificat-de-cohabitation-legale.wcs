@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <formdef id="386" url="https://demo-formulaires.guichet-citoyen.be/backoffice/forms/386/">
   <name>Certificat de cohabitation l&#233;gale</name>
-  <url_name>certificat-de-cohabitation-legale</url_name>
+  <url_name>demande-rn-certificat-de-cohabitation-legale</url_name>
   <discussion>false</discussion>
   <detailed_emails>true</detailed_emails>
   <disabled>false</disabled>

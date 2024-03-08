@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <formdef id="385" url="https://demo-formulaires.guichet-citoyen.be/backoffice/forms/385/">
   <name>Certificat de vie</name>
-  <url_name>certificat-de-vie</url_name>
+  <url_name>demande-rn-certificat-de-vie</url_name>
   <discussion>false</discussion>
   <detailed_emails>true</detailed_emails>
   <disabled>false</disabled>

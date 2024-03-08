@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <formdef id="387" url="https://demo-formulaires.guichet-citoyen.be/backoffice/forms/387/">
   <name>Composition de m&#233;nage</name>
-  <url_name>composition-de-menage</url_name>
+  <url_name>demande-rn-composition-de-menage</url_name>
   <discussion>false</discussion>
   <detailed_emails>true</detailed_emails>
   <disabled>false</disabled>
