@@ -12,7 +12,7 @@
   <include_download_all_button>false</include_download_all_button>
   <has_captcha>false</has_captcha>
   <skip_from_360_view>false</skip_from_360_view>
-  <category slug="iateleservices-test-liaison-rn-ne-pas-toucher" category_id="167">iA.T&#233;l&#233;services - TEST LIAISON RN - NE PAS TOUCHER</category>
+  <category slug="population" category_id="167">Population</category>
   <workflow slug="imio-certificats-population" workflow_id="180">iMio - Certificats Population</workflow>
   <fields>
     <field>

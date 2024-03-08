@@ -104,10 +104,10 @@ serveur d&#233;connect&#233;
           <method>GET</method>
           <qs_data>
             <item>
-              <name>rn</name>
+              <name>person_nrn</name>
               <value>{{ form_user_var_niss }}</value>
             </item><item>
-              <name>rn_requestor</name>
+              <name>requestor_nrn</name>
               <value>{{ form_user_var_niss }}</value>
             </item><item>
               <name>document_type</name>
