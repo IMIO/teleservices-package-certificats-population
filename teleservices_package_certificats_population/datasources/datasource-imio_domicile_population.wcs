@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<datasource id="541" url="https://demo-formulaires.guichet-citoyen.be/backoffice/settings/data-sources/541/">
+  <name>iMio - Domicile Population</name>
+  <slug>imio_domicile_population</slug>
+  <data_source>
+    <type>jsonvalue</type>
+    <value>[{"id": "{{ commune_slug }}", "text": "Domicili&#233;(e) &#224; {{ commune_name }}"}, {"id": "pas_{{ commune_slug }}", "text": "Pas domicili&#233;(e) &#224; {{ commune_name }}"}, {"id": "plus_{{ commune_slug }}", "text": "Plus domicili&#233;(e) &#224; {{ commune_name }}"}]</value>
+  </data_source>
+</datasource>
