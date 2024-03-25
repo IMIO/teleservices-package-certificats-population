@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<workflow id="180" url="https://demo-formulaires.guichet-citoyen.be/backoffice/workflows/180/">
+<workflow id="180" url="">
   <name>iMio - Certificats Population</name>
   <slug>imio-certificats-population</slug>
   <roles>
@@ -102,6 +102,7 @@ serveur d&#233;connect&#233;
         </item><item type="webservice_call" id="1">
           <label>R&#233;cup&#233;ration du certificat</label>
           <method>GET</method>
+          <url>{{ passerelle_url }}passerelle-imio-apims-certificats-population/connecteur-rn/read-document</url>
           <qs_data>
             <item>
               <name>person_nrn</name>
