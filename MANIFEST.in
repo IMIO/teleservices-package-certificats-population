@@ -1,3 +1,3 @@
-global-include *.wcs *.sh
+global-include *.wcs *.sh *.py *.json
 include MANIFEST.in
 include VERSION
