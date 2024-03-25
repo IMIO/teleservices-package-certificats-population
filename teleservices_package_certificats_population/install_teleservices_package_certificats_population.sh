@@ -10,6 +10,6 @@ if [ ! -f "/etc/passerelle/settings.d/certificats_population.py" ] || [ ! -s "/e
   cp $install_path/passerelle/certificats_population.py /etc/passerelle/settings.d/
 fi
 
-service passerelle restart
+service passerelle start
 
 sudo -u hobo hobo-manage imio_indus_deploy --directory $install_path
