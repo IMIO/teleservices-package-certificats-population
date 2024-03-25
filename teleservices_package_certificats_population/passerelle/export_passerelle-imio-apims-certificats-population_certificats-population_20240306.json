@@ -3,8 +3,8 @@
     {
       "@type": "passerelle-resource",
       "resource_type": "passerelle_imio_apims_certificats_population.apimscertificatspopulationconnector",
-      "title": "Certificats Population",
-      "slug": "certificats-population",
+      "title": "Registre national",
+      "slug": "connecteur-rn",
       "description": "Connecteur certificats population",
       "log_level": "ERROR",
       "access_rights": [],
