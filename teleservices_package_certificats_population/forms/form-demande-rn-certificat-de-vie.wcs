@@ -4,7 +4,7 @@
   <url_name>demande-rn-certificat-de-vie</url_name>
   <discussion>false</discussion>
   <detailed_emails>true</detailed_emails>
-  <disabled>false</disabled>
+  <disabled>true</disabled>
   <only_allow_one>false</only_allow_one>
   <enable_tracking_codes>false</enable_tracking_codes>
   <confirmation>false</confirmation>
@@ -12,7 +12,7 @@
   <include_download_all_button>false</include_download_all_button>
   <has_captcha>false</has_captcha>
   <skip_from_360_view>false</skip_from_360_view>
-  <category slug="population" category_id="167">Population</category>
+  <category slug="demande-population" category_id="167">Population</category>
   <workflow slug="imio-certificats-population" workflow_id="180">iMio - Certificats Population</workflow>
   <fields>
     <field>
