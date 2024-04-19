@@ -1188,6 +1188,22 @@ Ce dernier vous permet d'indiquer des informations personnalis&#233;es aux citoy
           <image_mobile_size type="int">75</image_mobile_size>
           <id type="str">4</id>
         </field><field>
+          <type>item</type>
+          <label type="str">Certficats : Pi&#232;ce justificative obligatoire si concerne un tiers</label>
+          <required type="bool">False</required>
+          <hint type="str">Cocher cette case affichera un champ "Fichier" o&#249; le demandeur sera invit&#233; &#224; joindre un document justificatif si la demande d'acte ne le concerne pas (concerne un tiers).</hint>
+          <varname type="str">certificats_piece_justificative_obligatoire_si_concerne_un_tiers</varname>
+          <display_mode type="str">radio</display_mode>
+          <items>
+            <item>Oui</item>
+            <item>Non</item>
+          </items><in_filters type="bool">False</in_filters>
+          <display_disabled_items type="bool">False</display_disabled_items>
+          <use_hint_as_first_option type="bool">True</use_hint_as_first_option>
+          <image_desktop_size type="int">150</image_desktop_size>
+          <image_mobile_size type="int">75</image_mobile_size>
+          <id type="str">7de5c36e-ddc1-46bf-a437-17584cf44579</id>
+        </field><field>
           <type>subtitle</type>
           <label type="str">Anonymisation</label>
           <display_locations>
