@@ -1192,7 +1192,7 @@ Ce dernier vous permet d'indiquer des informations personnalis&#233;es aux citoy
           <label type="str">Certficats : Pi&#232;ce justificative obligatoire si concerne un tiers</label>
           <required type="bool">False</required>
           <hint type="str">Cocher cette case affichera un champ "Fichier" o&#249; le demandeur sera invit&#233; &#224; joindre un document justificatif si la demande d'acte ne le concerne pas (concerne un tiers).</hint>
-          <varname type="str">certificats_piece_justificative_obligatoire_si_concerne_un_tiers</varname>
+          <varname type="str">actes_piece_justificative_tiers</varname>
           <display_mode type="str">radio</display_mode>
           <items>
             <item>Oui</item>
