@@ -247,9 +247,10 @@ Pour r&#233;f&#233;rence, voici le d&#233;tail du formulaire :
           <display_title>True</display_title>
           <button_label>Envoyer le document vers le porte-documents</button_label>
           <display_button>True</display_button>
+          <backoffice_filefield_id>boc69b2ccc-1a6c-43a8-a1e0-5008ba678885</backoffice_filefield_id>
           <attach_to_history>True</attach_to_history>
           <allow_portfolio_picking>False</allow_portfolio_picking>
-          <push_to_portfolio>True</push_to_portfolio>
+          <push_to_portfolio>False</push_to_portfolio>
           <condition>
             <type>django</type>
             <value>form_var_destinations and "porte" in form_var_destinations or form_var_destinations is None</value>
