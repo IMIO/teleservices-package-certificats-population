@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<datasource id="238" url="">
+  <name>Mode de d&#233;livrance - Population</name>
+  <slug>mode_de_delivrance_1</slug>
+  <data_source>
+    <type>jsonvalue</type>
+    <value>[{"id": "mondossier","text": "Je souhaite r&#233;cup&#233;rer directement le document PDF.", "disabled": true}, {"id": "commune","text": "Je souhaite recevoir mes documents par le biais de mon administration communale.", "disabled": false}]</value>
+  </data_source>
+</datasource>
