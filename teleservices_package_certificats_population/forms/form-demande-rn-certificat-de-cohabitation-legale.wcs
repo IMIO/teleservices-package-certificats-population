@@ -33,7 +33,7 @@
       <id type="str">105</id>
     </field><field>
       <type>page</type>
-      <label type="str">Certificat de nationalit&#233; belge</label>
+      <label type="str">Certificat de cohabitation légale</label>
       <post_conditions>
         <post_condition>
           <condition>
