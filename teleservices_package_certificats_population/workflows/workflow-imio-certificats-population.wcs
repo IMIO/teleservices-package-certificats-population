@@ -32,8 +32,9 @@
           <condition>
             <type>django</type>
             <value>session_user|is_strong_authentication and form_var_demande_me_concerne and form_var_mode_delivrance_raw == "mondossier"</value>
-          </condition><set_marker_on_status>False</set_marker_on_status>
-        </item><item type="set-backoffice-fields" id="5">
+          </condition><mode>immediate</mode>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item><item type="set-backoffice-fields" id="3">
           <label>Donn&#233;es de la demande</label>
           <fields>
             <field>
@@ -47,7 +48,7 @@
               <value>{{form_option_paiement_en_ligne}}</value>
             </field>
           </fields>
-        </item><item type="set-backoffice-fields" id="9">
+        </item><item type="set-backoffice-fields" id="4">
           <label>Donn&#233;es de la personne</label>
           <fields>
             <field>
@@ -72,19 +73,22 @@
           <condition>
             <type>django</type>
             <value>form_var_wf_total_commande|add:0 == 0 and form_var_destinations_paymentrequired == "False"</value>
-          </condition><set_marker_on_status>False</set_marker_on_status>
-        </item><item type="jump" id="11">
+          </condition><mode>immediate</mode>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item><item type="jump" id="6">
           <status>21</status>
           <condition>
             <type>django</type>
             <value>not form_var_wf_paiement_en_ligne</value>
-          </condition><set_marker_on_status>False</set_marker_on_status>
-        </item><item type="jump" id="12">
+          </condition><mode>immediate</mode>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item><item type="jump" id="7">
           <status>10</status>
           <condition>
             <type>django</type>
             <value>form_option_regie_de_paiement</value>
-          </condition><set_marker_on_status>False</set_marker_on_status>
+          </condition><mode>immediate</mode>
+          <set_marker_on_status>False</set_marker_on_status>
         </item>
       </items>
     </status><status>
@@ -94,12 +98,7 @@
       <visibility>
         <role>__restricted__</role>
       </visibility><items>
-        <item type="register-comment" id="3">
-          <comment>PDF mal encod&#233;
-document n'existe pas
-serveur d&#233;connect&#233;
-</comment>
-        </item><item type="webservice_call" id="1">
+        <item type="webservice_call" id="2">
           <label>R&#233;cup&#233;ration du certificat</label>
           <method>GET</method>
           <url>{{ passerelle_url }}passerelle-imio-apims-certificats-population/connecteur-rn/read-document</url>
@@ -117,18 +116,23 @@ serveur d&#233;connect&#233;
           </qs_data><post>False</post>
           <response_type>attachment</response_type>
           <varname>population_document</varname>
+          <store_all_responses>False</store_all_responses>
+          <attach_file_to_history>True</attach_file_to_history>
           <backoffice_filefield_id>boc69b2ccc-1a6c-43a8-a1e0-5008ba678885</backoffice_filefield_id>
           <action_on_app_error>41</action_on_app_error>
           <action_on_4xx>41</action_on_4xx>
           <action_on_5xx>41</action_on_5xx>
           <action_on_bad_data>:pass</action_on_bad_data>
           <action_on_network_errors>41</action_on_network_errors>
+          <record_errors>True</record_errors>
+          <record_on_errors>True</record_on_errors>
           <notify_on_errors>False</notify_on_errors>
           <record_on_errors>True</record_on_errors>
           <record_errors>True</record_errors>
           <set_marker_on_status>False</set_marker_on_status>
         </item><item type="jump" id="2">
           <status>40</status>
+          <mode>immediate</mode>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
       </items>
@@ -138,10 +142,18 @@ serveur d&#233;connect&#233;
       <colour>#ff0000</colour>
       <visibility />
       <items>
-        <item type="register-comment" id="1" />
-        <item type="register-comment" id="2" />
-        <item type="register-comment" id="3" />
-        <item type="register-comment" id="4" />
+        <item type="choice" id="5">
+          <label>Debug</label>
+          <by>
+            <item slug="debug" role_id="1627a60e9baa4cfcb8804335e3b0212f">Debug</item>
+          </by><status>39</status>
+          <require_confirmation>False</require_confirmation>
+          <ignore_form_errors>False</ignore_form_errors>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item><item type="register-comment" id="6">
+          <comment>Un probl&#232;me est survenu lors de la r&#233;cup&#233;ration du document.</comment>
+          <level>error</level>
+        </item>
       </items>
     </status><status>
       <id>40</id>
@@ -199,13 +211,15 @@ Bien cordialement,</body>
           <condition>
             <type>django</type>
             <value>form_var_wf_total_commande|add:0 &gt; 0 and form_var_wf_paiement_en_ligne</value>
-          </condition><set_marker_on_status>False</set_marker_on_status>
+          </condition><mode>immediate</mode>
+          <set_marker_on_status>False</set_marker_on_status>
         </item><item type="jump" id="4">
           <status>25</status>
           <condition>
             <type>django</type>
             <value>form_var_wf_total_commande|add:0 &gt; 0</value>
-          </condition><set_marker_on_status>False</set_marker_on_status>
+          </condition><mode>immediate</mode>
+          <set_marker_on_status>False</set_marker_on_status>
         </item>
       </items>
     </status><status>
@@ -351,14 +365,16 @@ Bien cordialement,</body>
             </item>
           </post_data><response_type>json</response_type>
           <varname>transaction_info</varname>
+          <store_all_responses>False</store_all_responses>
+          <attach_file_to_history>True</attach_file_to_history>
           <action_on_app_error>:pass</action_on_app_error>
           <action_on_4xx>:stop</action_on_4xx>
           <action_on_5xx>:stop</action_on_5xx>
           <action_on_bad_data>:pass</action_on_bad_data>
           <action_on_network_errors>:stop</action_on_network_errors>
-          <notify_on_errors>True</notify_on_errors>
-          <record_on_errors>True</record_on_errors>
           <record_errors>True</record_errors>
+          <record_on_errors>True</record_on_errors>
+          <notify_on_errors>True</notify_on_errors>
           <set_marker_on_status>False</set_marker_on_status>
         </item><item type="register-comment" id="2">
           <comment>&lt;p&gt;
@@ -374,10 +390,12 @@ Votre commande de document(s) attend d'&#234;tre r&#233;gl&#233;e et se trouve d
           <position>top</position>
         </item><item type="jump" id="4">
           <status>12</status>
+          <mode>trigger</mode>
           <trigger>cancelled</trigger>
           <set_marker_on_status>False</set_marker_on_status>
         </item><item type="jump" id="5">
           <status>17</status>
+          <mode>trigger</mode>
           <trigger>paid</trigger>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
@@ -419,14 +437,16 @@ Votre commande de document(s) attend d'&#234;tre r&#233;gl&#233;e et se trouve d
               <value>skip</value>
             </item>
           </post_data><response_type>json</response_type>
+          <store_all_responses>False</store_all_responses>
+          <attach_file_to_history>True</attach_file_to_history>
           <action_on_app_error>:pass</action_on_app_error>
           <action_on_4xx>:stop</action_on_4xx>
           <action_on_5xx>:stop</action_on_5xx>
           <action_on_bad_data>:pass</action_on_bad_data>
           <action_on_network_errors>:stop</action_on_network_errors>
-          <notify_on_errors>False</notify_on_errors>
-          <record_on_errors>True</record_on_errors>
           <record_errors>False</record_errors>
+          <record_on_errors>True</record_on_errors>
+          <notify_on_errors>False</notify_on_errors>
           <condition>
             <type>django</type>
             <value>transaction_info_response_id</value>
@@ -443,6 +463,7 @@ Votre d&#233;marche gratuite "{{ form_name }}" est en cours de traitement par no
 Bien cordialement,</body>
         </item><item type="jump" id="3">
           <status>accepted</status>
+          <mode>immediate</mode>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
       </items>
@@ -480,6 +501,7 @@ Bien cordialement,
 </body>
         </item><item type="jump" id="3">
           <status>accepted</status>
+          <mode>immediate</mode>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
       </items>
@@ -503,14 +525,16 @@ Bien cordialement,
               <value>skip</value>
             </item>
           </post_data><response_type>json</response_type>
+          <store_all_responses>False</store_all_responses>
+          <attach_file_to_history>True</attach_file_to_history>
           <action_on_app_error>:pass</action_on_app_error>
           <action_on_4xx>:stop</action_on_4xx>
           <action_on_5xx>:stop</action_on_5xx>
           <action_on_bad_data>:pass</action_on_bad_data>
           <action_on_network_errors>:stop</action_on_network_errors>
-          <notify_on_errors>True</notify_on_errors>
-          <record_on_errors>True</record_on_errors>
           <record_errors>True</record_errors>
+          <record_on_errors>True</record_on_errors>
+          <notify_on_errors>True</notify_on_errors>
           <condition>
             <type>django</type>
             <value>transaction_info_response_id</value>
@@ -578,6 +602,7 @@ Bien cordialement,
           </fields>
         </item><item type="jump" id="2">
           <status>22</status>
+          <mode>immediate</mode>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
       </items>
@@ -671,13 +696,14 @@ Bien cordialement,</body>
       <colour>#66FF66</colour>
       <visibility />
       <items>
-        <item type="register-comment" id="2">
+        <item type="register-comment" id="1">
           <comment>Votre virement vient d'&#234;tre marqu&#233; comme per&#231;u par l'administration.</comment>
           <to>
             <item role_id="_submitter">_submitter</item>
           </to>
-        </item><item type="jump" id="1">
+        </item><item type="jump" id="2">
           <status>accepted</status>
+          <mode>immediate</mode>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
       </items>
@@ -701,17 +727,20 @@ Bien cordialement,</body>
           </qs_data><post>False</post>
           <response_type>json</response_type>
           <varname>cancel_operation</varname>
+          <store_all_responses>False</store_all_responses>
+          <attach_file_to_history>True</attach_file_to_history>
           <action_on_app_error>25</action_on_app_error>
           <action_on_4xx>:stop</action_on_4xx>
           <action_on_5xx>25</action_on_5xx>
           <action_on_bad_data>:pass</action_on_bad_data>
           <action_on_network_errors>:stop</action_on_network_errors>
-          <notify_on_errors>False</notify_on_errors>
-          <record_on_errors>True</record_on_errors>
           <record_errors>True</record_errors>
+          <record_on_errors>True</record_on_errors>
+          <notify_on_errors>False</notify_on_errors>
           <set_marker_on_status>False</set_marker_on_status>
         </item><item type="jump" id="2">
           <status>27</status>
+          <mode>immediate</mode>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
       </items>
@@ -767,8 +796,8 @@ Bien &#224; vous,
                 <required type="bool">True</required>
                 <varname type="str">iban</varname>
                 <display_locations>
-                  <display_location>validation</display_location>
-                  <display_location>summary</display_location>
+                  <item>validation</item>
+                  <item>summary</item>
                 </display_locations><prefill>
                   <type>none</type>
                 </prefill><anonymise type="str">final</anonymise>
@@ -779,8 +808,8 @@ Bien &#224; vous,
                 <required type="bool">True</required>
                 <varname type="str">nom</varname>
                 <display_locations>
-                  <display_location>validation</display_location>
-                  <display_location>summary</display_location>
+                  <item>validation</item>
+                  <item>summary</item>
                 </display_locations><prefill>
                   <type>user</type>
                   <value>_last_name</value>
@@ -846,8 +875,8 @@ Bien &#224; vous,
                 <required type="bool">True</required>
                 <varname type="str">pays</varname>
                 <display_locations>
-                  <display_location>validation</display_location>
-                  <display_location>summary</display_location>
+                  <item>validation</item>
+                  <item>summary</item>
                 </display_locations><prefill>
                   <type>user</type>
                   <value>_country</value>
@@ -940,14 +969,16 @@ Cordialement, </body>
           <condition>
             <type>django</type>
             <value>form_var_demande_me_concerne</value>
-          </condition><timeout>{{ form_option_delai_anonymisation_me_concerne }} jours</timeout>
+          </condition><mode>timeout</mode>
+          <timeout>{{ form_option_delai_anonymisation_me_concerne }} jours</timeout>
           <set_marker_on_status>False</set_marker_on_status>
         </item><item type="jump" id="3">
           <status>38</status>
           <condition>
             <type>django</type>
             <value>form_var_demande_concerne_tier</value>
-          </condition><timeout>{{ form_option_delai_anonymisation_document_concerne_tier }} jours</timeout>
+          </condition><mode>timeout</mode>
+          <timeout>{{ form_option_delai_anonymisation_document_concerne_tier }} jours</timeout>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
       </items>
@@ -975,7 +1006,7 @@ Cordialement, </body>
       </items><triggers>
         <trigger type="manual" id="8748c0b0-59d6-49ad-b00d-c683db005990">
           <roles>
-            <item slug="debug" role_id="08b4ba67eb2d421ea88d4bb0256a9666">Debug</item>
+            <item slug="debug" role_id="1627a60e9baa4cfcb8804335e3b0212f">Debug</item>
           </roles><allow_as_mass_action>True</allow_as_mass_action>
           <require_confirmation>False</require_confirmation>
         </trigger>
@@ -988,7 +1019,7 @@ Cordialement, </body>
       </items><triggers>
         <trigger type="manual" id="7a3a1475-ecd5-421c-a07c-766ad720ee2b">
           <roles>
-            <item slug="debug" role_id="08b4ba67eb2d421ea88d4bb0256a9666">Debug</item>
+            <item slug="debug" role_id="1627a60e9baa4cfcb8804335e3b0212f">Debug</item>
           </roles><allow_as_mass_action>True</allow_as_mass_action>
           <require_confirmation>False</require_confirmation>
         </trigger>
@@ -1005,7 +1036,7 @@ Cordialement, </body>
       </items><triggers>
         <trigger type="manual" id="ee8824e9-4a77-403a-a6a1-b3b650138a9a">
           <roles>
-            <item slug="debug" role_id="08b4ba67eb2d421ea88d4bb0256a9666">Debug</item>
+            <item slug="debug" role_id="1627a60e9baa4cfcb8804335e3b0212f">Debug</item>
           </roles><allow_as_mass_action>True</allow_as_mass_action>
           <require_confirmation>False</require_confirmation>
         </trigger>
@@ -1024,12 +1055,10 @@ Cordialement, </body>
       </items><triggers>
         <trigger type="timeout" id="4a65f297-9b34-4b0d-963a-a4a1af68c89a">
           <anchor>finalized</anchor>
-          <anchor_expression />
-          <anchor_template />
           <timeout>0</timeout>
         </trigger><trigger type="manual" id="ede2fb20-aab7-4985-8525-1527123c1ee4">
           <roles>
-            <item slug="debug" role_id="08b4ba67eb2d421ea88d4bb0256a9666">Debug</item>
+            <item slug="debug" role_id="1627a60e9baa4cfcb8804335e3b0212f">Debug</item>
           </roles><allow_as_mass_action>True</allow_as_mass_action>
           <require_confirmation>False</require_confirmation>
         </trigger>
@@ -1049,14 +1078,12 @@ Cordialement, </body>
         <trigger type="manual" id="4bb20453-ad4d-4485-9de2-d843e92055b2">
           <roles>
             <item role_id="_receiver">_receiver</item>
-            <item slug="debug" role_id="08b4ba67eb2d421ea88d4bb0256a9666">Debug</item>
-            <item slug="agent-ayant-acces-aux-fabriques" role_id="032bfed279a448d39a09dedadbc09a31">Agent ayant acces aux fabriques</item>
+            <item slug="debug" role_id="1627a60e9baa4cfcb8804335e3b0212f">Debug</item>
+            <item slug="agent-ayant-acces-aux-fabriques" role_id="c8707597fa26469a9ffc78c1cff6e1f2">Agent ayant acces aux fabriques</item>
           </roles><allow_as_mass_action>True</allow_as_mass_action>
           <require_confirmation>False</require_confirmation>
         </trigger><trigger type="timeout" id="ffd68291-0bf3-4f65-8259-618dd48570da">
           <anchor>1st-arrival</anchor>
-          <anchor_expression />
-          <anchor_template />
           <anchor_status_first>wf-10</anchor_status_first>
           <timeout>0</timeout>
         </trigger>
@@ -1081,8 +1108,8 @@ Ce dernier vous permet d'indiquer des informations personnalis&#233;es aux citoy
           <type>subtitle</type>
           <label type="str">Paiement</label>
           <display_locations>
-            <display_location>validation</display_location>
-            <display_location>summary</display_location>
+            <item>validation</item>
+            <item>summary</item>
           </display_locations><id type="str">24</id>
         </field><field>
           <type>string</type>
@@ -1090,12 +1117,9 @@ Ce dernier vous permet d'indiquer des informations personnalis&#233;es aux citoy
           <required type="bool">False</required>
           <varname type="str">cout</varname>
           <display_locations>
-            <display_location>validation</display_location>
-            <display_location>summary</display_location>
-          </display_locations><prefill>
-            <type>string</type>
-            <value>"0"</value>
-          </prefill><anonymise type="str">final</anonymise>
+            <item>validation</item>
+            <item>summary</item>
+          </display_locations><anonymise type="str">final</anonymise>
           <id type="str">1</id>
         </field><field>
           <type>string</type>
@@ -1113,7 +1137,7 @@ Ce dernier vous permet d'indiquer des informations personnalis&#233;es aux citoy
           <hint type="str">Plus d'information sur les r&#233;gies de paiement : https://docs.imio.be/imio-doc/ia.teleservices/package/acte.html#configurer-un-formulaire-etat-civil-population</hint>
           <varname type="str">regie_de_paiement</varname>
           <display_locations />
-          <anonymise type="bool">False</anonymise>
+          <anonymise type="str">no</anonymise>
           <display_mode type="str">radio</display_mode>
           <items />
           <data_source>
@@ -1132,17 +1156,15 @@ Ce dernier vous permet d'indiquer des informations personnalis&#233;es aux citoy
           <hint type="str">A cocher si vous poss&#233;der une r&#233;gie de paiement tel qu'Atos, Ingenico, Mollie, ...</hint>
           <varname type="str">paiement_en_ligne</varname>
           <display_locations>
-            <display_location>summary</display_location>
-          </display_locations><prefill>
-            <type>none</type>
-          </prefill><anonymise type="str">no</anonymise>
+            <item>summary</item>
+          </display_locations><anonymise type="str">no</anonymise>
           <id type="str">13</id>
         </field><field>
           <type>subtitle</type>
           <label type="str">Motifs et destinations</label>
           <display_locations>
-            <display_location>validation</display_location>
-            <display_location>summary</display_location>
+            <item>validation</item>
+            <item>summary</item>
           </display_locations><id type="str">27</id>
         </field><field>
           <type>items</type>
@@ -1150,11 +1172,9 @@ Ce dernier vous permet d'indiquer des informations personnalis&#233;es aux citoy
           <required type="bool">False</required>
           <varname type="str">motifs_disponibles</varname>
           <display_locations>
-            <display_location>validation</display_location>
-            <display_location>summary</display_location>
-          </display_locations><prefill>
-            <type>none</type>
-          </prefill><anonymise type="bool">True</anonymise>
+            <item>validation</item>
+            <item>summary</item>
+          </display_locations><anonymise type="str">final</anonymise>
           <items />
           <display_mode type="str">checkboxes</display_mode>
           <min_choices type="int">0</min_choices>
@@ -1172,11 +1192,9 @@ Ce dernier vous permet d'indiquer des informations personnalis&#233;es aux citoy
           <required type="bool">False</required>
           <varname type="str">mode_recup_disponibles</varname>
           <display_locations>
-            <display_location>validation</display_location>
-            <display_location>summary</display_location>
-          </display_locations><prefill>
-            <type>none</type>
-          </prefill><anonymise type="bool">True</anonymise>
+            <item>validation</item>
+            <item>summary</item>
+          </display_locations><anonymise type="str">final</anonymise>
           <items />
           <display_mode type="str">checkboxes</display_mode>
           <min_choices type="int">0</min_choices>
@@ -1194,6 +1212,10 @@ Ce dernier vous permet d'indiquer des informations personnalis&#233;es aux citoy
           <required type="bool">False</required>
           <hint type="str">Cocher cette case affichera un champ "Fichier" o&#249; le demandeur sera invit&#233; &#224; joindre un document justificatif si la demande d'acte ne le concerne pas (concerne un tiers).</hint>
           <varname type="str">actes_piece_justificative_tiers</varname>
+          <display_locations>
+            <item>validation</item>
+            <item>summary</item>
+          </display_locations><anonymise type="str">no</anonymise>
           <display_mode type="str">radio</display_mode>
           <items>
             <item>Oui</item>
@@ -1208,8 +1230,8 @@ Ce dernier vous permet d'indiquer des informations personnalis&#233;es aux citoy
           <type>subtitle</type>
           <label type="str">Anonymisation</label>
           <display_locations>
-            <display_location>validation</display_location>
-            <display_location>summary</display_location>
+            <item>validation</item>
+            <item>summary</item>
           </display_locations><id type="str">22</id>
         </field><field>
           <type>bool</type>
@@ -1258,8 +1280,8 @@ Ce dernier vous permet d'indiquer des informations personnalis&#233;es aux citoy
           <type>subtitle</type>
           <label type="str">Autre</label>
           <display_locations>
-            <display_location>validation</display_location>
-            <display_location>summary</display_location>
+            <item>validation</item>
+            <item>summary</item>
           </display_locations><id type="str">30</id>
         </field><field>
           <type>string</type>
@@ -1282,8 +1304,8 @@ Ce dernier vous permet d'indiquer des informations personnalis&#233;es aux citoy
           <label type="str">Nom de l'int&#233;ress&#233;</label>
           <required type="bool">True</required>
           <display_locations>
-            <display_location>validation</display_location>
-            <display_location>summary</display_location>
+            <item>validation</item>
+            <item>summary</item>
           </display_locations><anonymise type="str">final</anonymise>
           <id type="str">bo10</id>
         </field><field>
@@ -1291,8 +1313,8 @@ Ce dernier vous permet d'indiquer des informations personnalis&#233;es aux citoy
           <label type="str">Pr&#233;nom de l'int&#233;ress&#233;</label>
           <required type="bool">True</required>
           <display_locations>
-            <display_location>validation</display_location>
-            <display_location>summary</display_location>
+            <item>validation</item>
+            <item>summary</item>
           </display_locations><anonymise type="str">final</anonymise>
           <id type="str">bo11</id>
         </field><field>
@@ -1301,8 +1323,8 @@ Ce dernier vous permet d'indiquer des informations personnalis&#233;es aux citoy
           <required type="bool">False</required>
           <varname type="str">wf_nn</varname>
           <display_locations>
-            <display_location>validation</display_location>
-            <display_location>summary</display_location>
+            <item>validation</item>
+            <item>summary</item>
           </display_locations><anonymise type="str">final</anonymise>
           <id type="str">bo6</id>
         </field><field>
@@ -1310,8 +1332,8 @@ Ce dernier vous permet d'indiquer des informations personnalis&#233;es aux citoy
           <label type="str">N&#176; t&#233;l&#233;phone de l'int&#233;ress&#233;</label>
           <required type="bool">True</required>
           <display_locations>
-            <display_location>validation</display_location>
-            <display_location>summary</display_location>
+            <item>validation</item>
+            <item>summary</item>
           </display_locations><anonymise type="str">final</anonymise>
           <id type="str">bo12</id>
         </field><field>
@@ -1319,8 +1341,8 @@ Ce dernier vous permet d'indiquer des informations personnalis&#233;es aux citoy
           <label type="str">Adresse de l'int&#233;ress&#233;</label>
           <required type="bool">True</required>
           <display_locations>
-            <display_location>validation</display_location>
-            <display_location>summary</display_location>
+            <item>validation</item>
+            <item>summary</item>
           </display_locations><anonymise type="str">final</anonymise>
           <id type="str">bo13</id>
         </field><field>
@@ -1329,8 +1351,8 @@ Ce dernier vous permet d'indiquer des informations personnalis&#233;es aux citoy
           <required type="bool">True</required>
           <varname type="str">wf_nb_exemplaires</varname>
           <display_locations>
-            <display_location>validation</display_location>
-            <display_location>summary</display_location>
+            <item>validation</item>
+            <item>summary</item>
           </display_locations><anonymise type="str">final</anonymise>
           <id type="str">bo2</id>
         </field><field>
@@ -1339,8 +1361,8 @@ Ce dernier vous permet d'indiquer des informations personnalis&#233;es aux citoy
           <required type="bool">True</required>
           <varname type="str">wf_total_commande</varname>
           <display_locations>
-            <display_location>validation</display_location>
-            <display_location>summary</display_location>
+            <item>validation</item>
+            <item>summary</item>
           </display_locations><anonymise type="str">final</anonymise>
           <id type="str">bo3</id>
         </field><field>
@@ -1358,7 +1380,7 @@ Ce dernier vous permet d'indiquer des informations personnalis&#233;es aux citoy
           <required type="bool">True</required>
           <varname type="str">document</varname>
           <display_locations>
-            <display_location>summary</display_location>
+            <item>summary</item>
           </display_locations><anonymise type="str">final</anonymise>
           <allow_portfolio_picking type="bool">False</allow_portfolio_picking>
           <automatic_image_resize type="bool">False</automatic_image_resize>
@@ -1372,7 +1394,7 @@ Ce dernier vous permet d'indiquer des informations personnalis&#233;es aux citoy
 </hint>
           <varname type="str">demande_me_concerne</varname>
           <display_locations>
-            <display_location>summary</display_location>
+            <item>summary</item>
           </display_locations><anonymise type="str">no</anonymise>
           <id type="str">bo98fcb92f-d9bc-4913-b0e1-c301885502f5</id>
         </field><field>
@@ -1381,7 +1403,7 @@ Ce dernier vous permet d'indiquer des informations personnalis&#233;es aux citoy
           <required type="bool">False</required>
           <varname type="str">demande_concerne_tier</varname>
           <display_locations>
-            <display_location>summary</display_location>
+            <item>summary</item>
           </display_locations><anonymise type="str">no</anonymise>
           <id type="str">bo24cc53ce-c40b-4167-9080-9f286ac310dd</id>
         </field><field>
@@ -1390,7 +1412,7 @@ Ce dernier vous permet d'indiquer des informations personnalis&#233;es aux citoy
           <required type="bool">False</required>
           <varname type="str">connexion_forte</varname>
           <display_locations>
-            <display_location>summary</display_location>
+            <item>summary</item>
           </display_locations><anonymise type="str">no</anonymise>
           <id type="str">bo2162b04d-0b5b-4a87-9075-425b8fdebfb2</id>
         </field><field>
@@ -1399,7 +1421,7 @@ Ce dernier vous permet d'indiquer des informations personnalis&#233;es aux citoy
           <required type="bool">True</required>
           <varname type="str">transaction_reference</varname>
           <display_locations>
-            <display_location>summary</display_location>
+            <item>summary</item>
           </display_locations><anonymise type="str">final</anonymise>
           <id type="str">bo2ac6793a-00c7-49ea-a725-a60653555d37</id>
         </field>
