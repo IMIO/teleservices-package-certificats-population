@@ -9,7 +9,6 @@
   <enable_tracking_codes>false</enable_tracking_codes>
   <confirmation>false</confirmation>
   <always_advertise>true</always_advertise>
-  <include_download_all_button>false</include_download_all_button>
   <has_captcha>false</has_captcha>
   <skip_from_360_view>false</skip_from_360_view>
   <category slug="demande-population" category_id="167">Population</category>
@@ -83,8 +82,8 @@
       <required type="bool">True</required>
       <varname type="str">rb_concerne</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><prefill>
         <type>none</type>
       </prefill><anonymise type="str">no</anonymise>
@@ -108,8 +107,8 @@
       <hint type="str">Veuillez d&#233;poser un document qui justifie votre demande pour un tiers (copie de carte d'identit&#233;, procuration ou raison l&#233;gale).</hint>
       <varname type="str">piece_justificative_tiers</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><anonymise type="str">final</anonymise>
       <allow_portfolio_picking type="bool">False</allow_portfolio_picking>
       <automatic_image_resize type="bool">False</automatic_image_resize>
@@ -124,8 +123,8 @@
       </condition><required type="bool">True</required>
       <varname type="str">mode_delivrance</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><anonymise type="str">no</anonymise>
       <display_mode type="str">radio</display_mode>
       <items />
@@ -146,10 +145,11 @@
       <hint type="str">La personne concern&#233;e par le document doit se rendre &#224; la commune de son domicile.</hint>
       <varname type="str">rb_domicile</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><anonymise type="str">no</anonymise>
       <display_mode type="str">radio</display_mode>
+      <items />
       <data_source>
         <type>imio_domicile_population</type>
       </data_source><in_filters type="bool">False</in_filters>
@@ -171,8 +171,8 @@
       <required type="bool">True</required>
       <varname type="str">parente</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><prefill>
         <type>none</type>
       </prefill><anonymise type="str">no</anonymise>
@@ -199,8 +199,8 @@
         <value>form_var_parente_raw == 'autre'</value>
       </condition><required type="bool">True</required>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><prefill>
         <type>none</type>
       </prefill><anonymise type="str">final</anonymise>
@@ -228,8 +228,8 @@
       <required type="bool">True</required>
       <varname type="str">nom_perscon</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><extra_css_class type="str">grid-1-2</extra_css_class>
       <prefill>
         <type>none</type>
@@ -241,8 +241,8 @@
       <required type="bool">True</required>
       <varname type="str">prenom_perscon</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><extra_css_class type="str">grid-1-2</extra_css_class>
       <prefill>
         <type>none</type>
@@ -255,8 +255,8 @@
       <hint type="str">Le n&#176; d'identification au Registre national se trouve sur la carte d'identit&#233;.</hint>
       <varname type="str">nn_perscon</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><extra_css_class type="str">grid-1-2 newline</extra_css_class>
       <prefill>
         <type>none</type>
@@ -270,8 +270,8 @@
       <required type="bool">True</required>
       <varname type="str">birthday_perscon</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><extra_css_class type="str">grid-1-2</extra_css_class>
       <prefill>
         <type>none</type>
@@ -286,8 +286,8 @@
       <required type="bool">True</required>
       <varname type="str">rb_naissance_perscon</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><prefill>
         <type>none</type>
       </prefill><anonymise type="str">final</anonymise>
@@ -296,8 +296,8 @@
       <type>subtitle</type>
       <label type="str">ADRESSE</label>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><id type="str">75</id>
     </field><field>
       <type>string</type>
@@ -305,8 +305,8 @@
       <required type="bool">True</required>
       <varname type="str">rue_perscon</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><extra_css_class type="str">grid-1-2 newline</extra_css_class>
       <prefill>
         <type>none</type>
@@ -319,8 +319,8 @@
       <hint type="str">Ex de num&#233;ro: 12, 145 et pas 1C ou 12/21 &#224; indiquer dans le champ bo&#238;te.</hint>
       <varname type="str">numero_perscon</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><extra_css_class type="str">grid-1-4</extra_css_class>
       <prefill>
         <type>none</type>
@@ -335,8 +335,8 @@
       <required type="bool">False</required>
       <varname type="str">boite_perscon</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><extra_css_class type="str">grid-1-4</extra_css_class>
       <prefill>
         <type>none</type>
@@ -348,8 +348,8 @@
       <required type="bool">True</required>
       <varname type="str">cp_perscon</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><extra_css_class type="str">grid-1-4 newline</extra_css_class>
       <prefill>
         <type>none</type>
@@ -361,8 +361,8 @@
       <required type="bool">True</required>
       <varname type="str">localite_perscon</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><extra_css_class type="str">grid-1-4</extra_css_class>
       <prefill>
         <type>user</type>
@@ -376,8 +376,8 @@
       <hint type="str">Choisissez une option</hint>
       <varname type="str">pays_perscon</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><extra_css_class type="str">grid-2-4</extra_css_class>
       <prefill>
         <type>none</type>
@@ -398,8 +398,8 @@
       <required type="bool">True</required>
       <varname type="str">email_perscon</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><extra_css_class type="str">grid-1-2 newline</extra_css_class>
       <prefill>
         <type>none</type>
@@ -411,8 +411,8 @@
       <required type="bool">True</required>
       <varname type="str">tel_perscon</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><extra_css_class type="str">grid-1-2</extra_css_class>
       <prefill>
         <type>user</type>
@@ -428,7 +428,7 @@
       <label type="str">Donn&#233;es du demandeur</label>
       <condition>
         <type>django</type>
-        <value>form_var_mode_delivrance_raw == 'commune'</value>
+        <value>form_var_mode_delivrance_raw == 'commune' or form_var_rb_concerne_raw == 'tiers'</value>
       </condition><id type="str">53</id>
     </field><field>
       <type>comment</type>
@@ -446,8 +446,8 @@
       <required type="bool">True</required>
       <varname type="str">nom</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><extra_css_class type="str">grid-1-2</extra_css_class>
       <prefill>
         <type>user</type>
@@ -460,8 +460,8 @@
       <required type="bool">True</required>
       <varname type="str">prenom</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><extra_css_class type="str">grid-1-2</extra_css_class>
       <prefill>
         <type>user</type>
@@ -475,8 +475,8 @@
       <hint type="str">Le n&#176; d'identification au Registre national se trouve sur la carte d'identit&#233;.</hint>
       <varname type="str">nn</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><extra_css_class type="str">grid-1-2 newline</extra_css_class>
       <prefill>
         <type>user</type>
@@ -492,8 +492,8 @@
       <hint type="str">Format de la date : 01/01/2016</hint>
       <varname type="str">birthday</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><extra_css_class type="str">grid-1-2</extra_css_class>
       <prefill>
         <type>user</type>
@@ -512,16 +512,16 @@
       </condition><required type="bool">True</required>
       <varname type="str">rb_naissance</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><anonymise type="str">final</anonymise>
       <id type="str">104</id>
     </field><field>
       <type>subtitle</type>
       <label type="str">ADRESSE</label>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><id type="str">60</id>
     </field><field>
       <type>string</type>
@@ -529,8 +529,8 @@
       <required type="bool">True</required>
       <varname type="str">rue</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><extra_css_class type="str">grid-1-2 newline</extra_css_class>
       <prefill>
         <type>user</type>
@@ -544,8 +544,8 @@
       <hint type="str">Ex de num&#233;ro: 12, 145 et pas 1C ou 12/21 &#224; indiquer dans le champ bo&#238;te.</hint>
       <varname type="str">numero</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><extra_css_class type="str">grid-1-4</extra_css_class>
       <prefill>
         <type>user</type>
@@ -561,8 +561,8 @@
       <required type="bool">False</required>
       <varname type="str">boite</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><extra_css_class type="str">grid-1-4</extra_css_class>
       <prefill>
         <type>user</type>
@@ -575,8 +575,8 @@
       <required type="bool">True</required>
       <varname type="str">cp</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><extra_css_class type="str">grid-1-4 newline</extra_css_class>
       <prefill>
         <type>user</type>
@@ -589,8 +589,8 @@
       <required type="bool">True</required>
       <varname type="str">localite</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><extra_css_class type="str">grid-1-4</extra_css_class>
       <prefill>
         <type>user</type>
@@ -604,8 +604,8 @@
       <hint type="str">Choisissez une option</hint>
       <varname type="str">pays</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><extra_css_class type="str">grid-2-4</extra_css_class>
       <prefill>
         <type>user</type>
@@ -627,8 +627,8 @@
       <required type="bool">True</required>
       <varname type="str">email</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><extra_css_class type="str">grid-1-2 newline</extra_css_class>
       <prefill>
         <type>user</type>
@@ -641,8 +641,8 @@
       <required type="bool">True</required>
       <varname type="str">tel</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><extra_css_class type="str">grid-1-2</extra_css_class>
       <prefill>
         <type>user</type>
@@ -658,7 +658,7 @@
       <label type="str">Destination du document</label>
       <condition>
         <type>django</type>
-        <value>form_var_mode_delivrance_raw == 'commune'</value>
+        <value>form_var_mode_delivrance_raw == 'commune' or form_var_rb_concerne_raw == 'tiers'</value>
       </condition><id type="str">84</id>
     </field><field>
       <type>computed</type>
@@ -674,8 +674,8 @@
       <hint type="str">Choisissez une option</hint>
       <varname type="str">motifs</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><anonymise type="str">no</anonymise>
       <display_mode type="str">list</display_mode>
       <items />
@@ -697,8 +697,8 @@
         <value>form_var_motifs == "Autre"</value>
       </condition><required type="bool">False</required>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><prefill>
         <type>none</type>
       </prefill><anonymise type="str">final</anonymise>
@@ -717,8 +717,8 @@
       <hint type="str">Choisissez une option</hint>
       <varname type="str">destinations</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><anonymise type="str">no</anonymise>
       <display_mode type="str">list</display_mode>
       <items />
@@ -739,8 +739,8 @@
       <hint type="str">Maximum 20 exemplaires.</hint>
       <varname type="str">nb_exemplaire</varname>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><prefill>
         <type>string</type>
         <value>1</value>
@@ -754,7 +754,7 @@
       <label type="str">Prix de la d&#233;marche</label>
       <condition>
         <type>django</type>
-        <value>form_var_mode_delivrance_raw == 'commune'</value>
+        <value>form_var_mode_delivrance_raw == 'commune' or form_var_rb_concerne_raw == 'tiers'</value>
       </condition><id type="str">89</id>
     </field><field>
       <type>comment</type>
@@ -772,8 +772,8 @@
       <required type="bool">True</required>
       <hint type="str">Hors &#233;ventuels frais de port.</hint>
       <display_locations>
-        <display_location>validation</display_location>
-        <display_location>summary</display_location>
+        <item>validation</item>
+        <item>summary</item>
       </display_locations><prefill>
         <locked>True</locked>
         <type>string</type>
