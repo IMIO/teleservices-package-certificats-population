@@ -288,10 +288,6 @@ Pour r&#233;f&#233;rence, voici le d&#233;tail du formulaire :
 </backoffice_info_text>
           <ignore_form_errors>False</ignore_form_errors>
           <set_marker_on_status>False</set_marker_on_status>
-          <condition>
-            <type>django</type>
-            <value>form_var_destinations and "porte" not in form_var_destinations or form_var_destinations is None</value>
-          </condition>
         </item><item type="choice" id="6">
           <label>Refuser la demande</label>
           <by>
