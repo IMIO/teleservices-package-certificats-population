@@ -70,11 +70,11 @@
       <id type="str">121</id>
     </field><field>
       <type>comment</type>
-      <label type="str">&lt;p&gt;{{ form_option_actes_commentaire_additionnel }}&lt;/p&gt;
+      <label type="str">&lt;p&gt;{{ form_option_commentaire }}&lt;/p&gt;
 </label>
       <condition>
         <type>django</type>
-        <value>form_option_actes_commentaire_additionnel</value>
+        <value>form_option_commentaire</value>
       </condition><display_locations />
       <id type="str">120</id>
     </field><field>
