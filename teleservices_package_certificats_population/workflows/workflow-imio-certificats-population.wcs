@@ -181,6 +181,20 @@
           <comment>Un probl&#232;me est survenu lors de la r&#233;cup&#233;ration du document.</comment>
           <level>error</level>
         </item>
+        <item type="register-comment" id="3">
+          <comment>Il n'y a pas de donn&#233;es dans le PDF :
+
+- Le citoyen n'habite pas la commune
+- Erreur de la part du Registre National</comment>
+          <to>
+            <item role_id="_receiver">_receiver</item>
+          </to>
+          <level>error</level>
+          <condition>
+            <type>django</type>
+            <value>form_workflow_data_population_document_error_response_err_desc == "NRN APIMS Error: 204"</value>
+          </condition>
+        </item>
       </items>
     </status>
     <status>
