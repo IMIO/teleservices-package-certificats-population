@@ -1302,6 +1302,8 @@ Bien cordialement,</body>
       <triggers>
         <trigger type="timeout" id="4a65f297-9b34-4b0d-963a-a4a1af68c89a">
           <anchor>finalized</anchor>
+          <anchor_expression />
+          <anchor_template />
           <timeout>0</timeout>
         </trigger>
         <trigger type="manual" id="ede2fb20-aab7-4985-8525-1527123c1ee4">
@@ -1338,6 +1340,8 @@ Bien cordialement,</body>
         </trigger>
         <trigger type="timeout" id="ffd68291-0bf3-4f65-8259-618dd48570da">
           <anchor>1st-arrival</anchor>
+          <anchor_expression />
+          <anchor_template />
           <anchor_status_first>wf-10</anchor_status_first>
           <timeout>0</timeout>
         </trigger>
@@ -1358,6 +1362,8 @@ Bien cordialement,</body>
           <button_label>Transf&#233;rer un fichier</button_label>
           <display_button>True</display_button>
           <attach_to_history>True</attach_to_history>
+          <allow_portfolio_picking>False</allow_portfolio_picking>
+          <push_to_portfolio>False</push_to_portfolio>
         </item>
       </items>
       <triggers>
@@ -1367,6 +1373,25 @@ Bien cordialement,</body>
             <item role_id="_receiver">_receiver</item>
           </roles>
           <allow_as_mass_action>True</allow_as_mass_action>
+          <require_confirmation>False</require_confirmation>
+        </trigger>
+      </triggers>
+    </action>
+    <action>
+      <id>9</id>
+      <name>Contacter le citoyen</name>
+      <items>
+        <item type="jump" id="1">
+          <status>42</status>
+          <set_marker_on_status>True</set_marker_on_status>
+        </item>
+      </items>
+      <triggers>
+        <trigger type="manual" id="93491e57-926a-420f-864a-c1819c28c079">
+          <roles>
+            <item role_id="_receiver">_receiver</item>
+          </roles>
+          <allow_as_mass_action>False</allow_as_mass_action>
           <require_confirmation>False</require_confirmation>
         </trigger>
       </triggers>
