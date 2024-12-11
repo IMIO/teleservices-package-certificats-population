@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<workflow id="180" url="">
+<workflow id="255" url="https://formulaires-e-guichet.liege.be/backoffice/workflows/255/">
   <name>iMio - Certificats Population</name>
   <slug>imio-certificats-population</slug>
   <roles>
@@ -170,7 +170,7 @@
         <item type="choice" id="1">
           <label>Debug</label>
           <by>
-            <item slug="debug" role_id="df908b92acec4a68b3a11bbf516263d9">Debug</item>
+            <item slug="debug" role_id="6faa8af506664e5dadbf294778c2424e">Debug</item>
           </by>
           <status>39</status>
           <require_confirmation>False</require_confirmation>
@@ -1149,7 +1149,7 @@ Cordialement, </body>
       <colour>#FFFFFF</colour>
       <visibility />
       <items>
-        <item type="sendmail" id="3">
+        <item type="sendmail" id="1">
           <to>
             <item role_id="_receiver">_receiver</item>
           </to>
@@ -1166,7 +1166,7 @@ Bien cordialement,</body>
             <value>form_previous_status == "Commentaire citoyen"</value>
           </condition>
         </item>
-        <item type="jump" id="4">
+        <item type="jump" id="2">
           <status>_previous</status>
           <condition>
             <type>django</type>
@@ -1175,22 +1175,18 @@ Bien cordialement,</body>
           <mode>immediate</mode>
           <set_marker_on_status>False</set_marker_on_status>
         </item>
-        <item type="commentable" id="1">
+        <item type="commentable" id="3">
           <label>Commentaire</label>
-          <button_label>Ajouter le commentaire</button_label>
+          <button_label>Ajouter un commentaire</button_label>
           <by>
             <item role_id="_receiver">_receiver</item>
           </by>
           <varname>commentaire_agent</varname>
           <required>False</required>
         </item>
-        <item type="jumponsubmit" id="2">
+        <item type="jumponsubmit" id="4">
           <status>43</status>
           <set_marker_on_status>False</set_marker_on_status>
-          <condition>
-            <type>django</type>
-            <value>comment_commentaire_agent</value>
-          </condition>
         </item>
       </items>
     </status>
@@ -1200,7 +1196,7 @@ Bien cordialement,</body>
       <colour>#FFFFFF</colour>
       <visibility />
       <items>
-        <item type="sendmail" id="2">
+        <item type="sendmail" id="1">
           <to>
             <item role_id="_submitter">_submitter</item>
           </to>
@@ -1213,7 +1209,7 @@ Vous pouvez le consulter en suivant le lien suivant : {{ form_url }}
 
 Bien cordialement,</body>
         </item>
-        <item type="commentable" id="1">
+        <item type="commentable" id="2">
           <label>Commentaire</label>
           <button_label>Ajouter le commentaire</button_label>
           <by>
@@ -1243,7 +1239,7 @@ Bien cordialement,</body>
       <triggers>
         <trigger type="manual" id="8748c0b0-59d6-49ad-b00d-c683db005990">
           <roles>
-            <item slug="debug" role_id="df908b92acec4a68b3a11bbf516263d9">Debug</item>
+            <item slug="debug" role_id="6faa8af506664e5dadbf294778c2424e">Debug</item>
           </roles>
           <allow_as_mass_action>True</allow_as_mass_action>
           <require_confirmation>False</require_confirmation>
@@ -1259,7 +1255,7 @@ Bien cordialement,</body>
       <triggers>
         <trigger type="manual" id="7a3a1475-ecd5-421c-a07c-766ad720ee2b">
           <roles>
-            <item slug="debug" role_id="df908b92acec4a68b3a11bbf516263d9">Debug</item>
+            <item slug="debug" role_id="6faa8af506664e5dadbf294778c2424e">Debug</item>
           </roles>
           <allow_as_mass_action>True</allow_as_mass_action>
           <require_confirmation>False</require_confirmation>
@@ -1279,7 +1275,7 @@ Bien cordialement,</body>
       <triggers>
         <trigger type="manual" id="ee8824e9-4a77-403a-a6a1-b3b650138a9a">
           <roles>
-            <item slug="debug" role_id="df908b92acec4a68b3a11bbf516263d9">Debug</item>
+            <item slug="debug" role_id="6faa8af506664e5dadbf294778c2424e">Debug</item>
           </roles>
           <allow_as_mass_action>True</allow_as_mass_action>
           <require_confirmation>False</require_confirmation>
@@ -1302,13 +1298,11 @@ Bien cordialement,</body>
       <triggers>
         <trigger type="timeout" id="4a65f297-9b34-4b0d-963a-a4a1af68c89a">
           <anchor>finalized</anchor>
-          <anchor_expression />
-          <anchor_template />
           <timeout>0</timeout>
         </trigger>
         <trigger type="manual" id="ede2fb20-aab7-4985-8525-1527123c1ee4">
           <roles>
-            <item slug="debug" role_id="df908b92acec4a68b3a11bbf516263d9">Debug</item>
+            <item slug="debug" role_id="6faa8af506664e5dadbf294778c2424e">Debug</item>
           </roles>
           <allow_as_mass_action>True</allow_as_mass_action>
           <require_confirmation>False</require_confirmation>
@@ -1332,16 +1326,14 @@ Bien cordialement,</body>
         <trigger type="manual" id="4bb20453-ad4d-4485-9de2-d843e92055b2">
           <roles>
             <item role_id="_receiver">_receiver</item>
-            <item slug="debug" role_id="df908b92acec4a68b3a11bbf516263d9">Debug</item>
-            <item slug="agent-ayant-acces-aux-fabriques" role_id="9be8b3ce1b3244be8f6e05a9aa003cf0">Agent ayant acces aux fabriques</item>
+            <item slug="debug" role_id="6faa8af506664e5dadbf294778c2424e">Debug</item>
+            <item slug="agent-ayant-acces-aux-fabriques" role_id="8c7a28f64ab74732ba5e8179c45c0442">Agent ayant acces aux fabriques</item>
           </roles>
           <allow_as_mass_action>True</allow_as_mass_action>
           <require_confirmation>False</require_confirmation>
         </trigger>
         <trigger type="timeout" id="ffd68291-0bf3-4f65-8259-618dd48570da">
           <anchor>1st-arrival</anchor>
-          <anchor_expression />
-          <anchor_template />
           <anchor_status_first>wf-10</anchor_status_first>
           <timeout>0</timeout>
         </trigger>
