@@ -1143,6 +1143,87 @@ Cordialement, </body>
         </item>
       </items>
     </status>
+    <status>
+      <id>42</id>
+      <name>Commentaire</name>
+      <colour>#FFFFFF</colour>
+      <visibility />
+      <items>
+        <item type="sendmail" id="1">
+          <to>
+            <item role_id="_receiver">_receiver</item>
+          </to>
+          <subject>Un citoyen a laiss&#233; un message : {{ form_name }}</subject>
+          <body>Bonjour,
+
+Un nouveau message a &#233;t&#233; ajout&#233; par le citoyen,
+
+Vous pouvez le consulter en suivant le lien suivant : {{ form_url_backoffice }}
+
+Bien cordialement,</body>
+          <condition>
+            <type>django</type>
+            <value>form_previous_status == "Commentaire citoyen"</value>
+          </condition>
+        </item>
+        <item type="jump" id="2">
+          <status>_previous</status>
+          <condition>
+            <type>django</type>
+            <value>form_previous_status == "Commentaire citoyen"</value>
+          </condition>
+          <mode>immediate</mode>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+        <item type="commentable" id="3">
+          <label>Commentaire</label>
+          <button_label>Ajouter un commentaire</button_label>
+          <by>
+            <item role_id="_receiver">_receiver</item>
+          </by>
+          <varname>commentaire_agent</varname>
+          <required>False</required>
+        </item>
+        <item type="jumponsubmit" id="4">
+          <status>43</status>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+    </status>
+    <status>
+      <id>43</id>
+      <name>Commentaire citoyen</name>
+      <colour>#FFFFFF</colour>
+      <visibility />
+      <items>
+        <item type="sendmail" id="1">
+          <to>
+            <item role_id="_submitter">_submitter</item>
+          </to>
+          <subject>Votre demande {{ form_name }} : Un agent vous a laiss&#233; un message</subject>
+          <body>Bonjour,
+
+Un nouveau message a &#233;t&#233; ajout&#233; &#224; votre demande,
+
+Vous pouvez le consulter en suivant le lien suivant : {{ form_url }}
+
+Bien cordialement,</body>
+        </item>
+        <item type="commentable" id="2">
+          <label>Commentaire</label>
+          <button_label>Ajouter le commentaire</button_label>
+          <by>
+            <item role_id="_submitter">_submitter</item>
+          </by>
+          <varname>commentaire_usager</varname>
+          <required>False</required>
+        </item>
+        <item type="jumponsubmit" id="3">
+          <status>42</status>
+          <set_marker_on_status>False</set_marker_on_status>
+        </item>
+      </items>
+    </status>
   </possible_status>
   <global_actions>
     <action>
@@ -1259,6 +1340,55 @@ Cordialement, </body>
           <anchor_template />
           <anchor_status_first>wf-10</anchor_status_first>
           <timeout>0</timeout>
+        </trigger>
+      </triggers>
+    </action>
+    <action>
+      <id>8</id>
+      <name>Ajouter un fichier</name>
+      <items>
+        <item type="addattachment" id="1">
+          <by>
+            <item role_id="_submitter">_submitter</item>
+            <item role_id="_receiver">_receiver</item>
+          </by>
+          <required>False</required>
+          <title>Transf&#233;rer un fichier</title>
+          <display_title>True</display_title>
+          <button_label>Transf&#233;rer un fichier</button_label>
+          <display_button>True</display_button>
+          <attach_to_history>True</attach_to_history>
+          <allow_portfolio_picking>False</allow_portfolio_picking>
+          <push_to_portfolio>False</push_to_portfolio>
+        </item>
+      </items>
+      <triggers>
+        <trigger type="manual" id="9535878e-b44b-4663-ba6e-507a758d4279">
+          <roles>
+            <item role_id="_submitter">_submitter</item>
+            <item role_id="_receiver">_receiver</item>
+          </roles>
+          <allow_as_mass_action>True</allow_as_mass_action>
+          <require_confirmation>False</require_confirmation>
+        </trigger>
+      </triggers>
+    </action>
+    <action>
+      <id>9</id>
+      <name>Contacter le citoyen</name>
+      <items>
+        <item type="jump" id="1">
+          <status>42</status>
+          <set_marker_on_status>True</set_marker_on_status>
+        </item>
+      </items>
+      <triggers>
+        <trigger type="manual" id="93491e57-926a-420f-864a-c1819c28c079">
+          <roles>
+            <item role_id="_receiver">_receiver</item>
+          </roles>
+          <allow_as_mass_action>False</allow_as_mass_action>
+          <require_confirmation>False</require_confirmation>
         </trigger>
       </triggers>
     </action>
