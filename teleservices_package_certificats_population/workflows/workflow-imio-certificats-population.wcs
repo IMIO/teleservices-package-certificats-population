@@ -258,7 +258,7 @@ Bien cordialement,</body>
           <status>24</status>
           <condition>
             <type>django</type>
-            <value>form_var_wf_total_commande|add:0 &gt; 0 and form_var_wf_paiement_en_ligne</value>
+            <value>form_var_wf_total_commande|add:0 &gt; 0 and form_var_wf_paiement_en_ligne and not form_option_interdire_remboursement</value>
           </condition>
           <mode>immediate</mode>
           <set_marker_on_status>False</set_marker_on_status>
@@ -267,7 +267,7 @@ Bien cordialement,</body>
           <status>25</status>
           <condition>
             <type>django</type>
-            <value>form_var_wf_total_commande|add:0 &gt; 0</value>
+            <value>form_var_wf_total_commande|add:0 &gt; 0 and not form_option_interdire_remboursement</value>
           </condition>
           <mode>immediate</mode>
           <set_marker_on_status>False</set_marker_on_status>
@@ -1467,6 +1467,15 @@ Bien cordialement,</body>
           </display_locations>
           <anonymise type="str">no</anonymise>
           <id type="str">13</id>
+        </field>
+        <field>
+          <type>bool</type>
+          <label type="str">Interdire le remboursement</label>
+          <required type="bool">False</required>
+          <hint type="str">&lt;p&gt;Emp&#234;che de passer &#224; la partie remboursement du workflow.&lt;/p&gt;</hint>
+          <varname type="str">interdire_remboursement</varname>
+          <display_locations />
+          <id type="str">c3b1f93e-4426-4a20-846b-67d3e4bbe5a0</id>
         </field>
         <field>
           <type>subtitle</type>
