@@ -1623,6 +1623,14 @@ Bien cordialement,</body>
           <anonymise type="str">final</anonymise>
           <id type="str">14</id>
         </field>
+        <field>
+          <type>bool</type>
+          <label type="str">Restreindre aux demandes personnelles</label>
+          <required type="bool">False</required>
+          <varname type="str">restreindre_aux_demandes_personnelles</varname>
+          <display_locations />
+          <id type="str">cb0f5f64-8339-4436-85a8-4df07c213965</id>
+        </field>
       </fields>
     </formdef>
   </variables>
