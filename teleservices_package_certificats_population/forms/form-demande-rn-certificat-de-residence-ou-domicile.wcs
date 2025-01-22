@@ -95,7 +95,10 @@
         <item>summary</item>
       </display_locations>
       <prefill>
-        <type>none</type>
+       <locked>True</locked>
+        <locked-unless-empty>True</locked-unless-empty>
+        <type>string</type>
+        <value>{% if form_option_restreindre_aux_demandes_personnelles %}moi{% endif %}</value>
       </prefill>
       <anonymise type="str">no</anonymise>
       <display_mode type="str">radio</display_mode>

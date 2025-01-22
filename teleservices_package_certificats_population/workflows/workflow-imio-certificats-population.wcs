@@ -1780,6 +1780,18 @@ Bien cordialement,</body>
           <anonymise type="str">final</anonymise>
           <id type="str">bo2ac6793a-00c7-49ea-a725-a60653555d37</id>
         </field>
+        <field>
+          <type>bool</type>
+          <label type="str">Restreindre aux demandes personnelles</label>
+          <required type="bool">False</required>
+          <varname type="str">restreindre_aux_demandes_personnelles</varname>
+          <display_locations>
+            <item>validation</item>
+            <item>summary</item>
+          </display_locations>
+          <anonymise type="str">no</anonymise>
+          <id type="str">0a212545-3bad-46c3-8fea-ea8ad7c5b5a7</id>
+        </field>
       </fields>
     </formdef>
   </backoffice-fields>
