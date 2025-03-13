@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<datasource id="141" url="https://demarches.mytournai.be/backoffice/settings/data-sources/141/">
+  <name>DS Lien de parent&#233; - Certificat Domicile</name>
+  <slug>ds_lien_de_parente_1</slug>
+  <data_source>
+    <type>jsonvalue</type>
+    <value>[{"id": "pere_mere", "text": "Parent ou tuteur (repr&#233;sentant l&#233;gal de l'enfant mineur)"}, {"id": "autre", "text": "Autre (&#224; pr&#233;ciser)"}]</value>
+  </data_source>
+  <category slug="imio-population-etat-civil" category_id="1">iMio - Population - Etat civil</category>
+</datasource>

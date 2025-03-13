@@ -114,26 +114,6 @@
       <id type="str">9</id>
     </field>
     <field>
-      <type>file</type>
-      <label type="str">Concerne une autre personne : pi&#232;ce justificative</label>
-      <condition>
-        <type>django</type>
-        <value>form_option_actes_piece_justificative_tiers == "Oui" and form_var_rb_concerne == "Concerne une autre personne"</value>
-      </condition>
-      <required type="bool">True</required>
-      <hint type="str">Veuillez d&#233;poser un document qui justifie votre demande pour un tiers (copie de carte d'identit&#233;, procuration ou raison l&#233;gale).</hint>
-      <varname type="str">piece_justificative_tiers</varname>
-      <display_locations>
-        <item>validation</item>
-        <item>summary</item>
-      </display_locations>
-      <anonymise type="str">final</anonymise>
-      <allow_portfolio_picking type="bool">False</allow_portfolio_picking>
-      <automatic_image_resize type="bool">False</automatic_image_resize>
-      <storage type="str">default</storage>
-      <id type="str">119</id>
-    </field>
-    <field>
       <type>item</type>
       <label type="str">Mode de d&#233;livrance</label>
       <condition>
@@ -202,9 +182,6 @@
         <item>validation</item>
         <item>summary</item>
       </display_locations>
-      <prefill>
-        <type>none</type>
-      </prefill>
       <anonymise type="str">no</anonymise>
       <display_mode type="str">radio</display_mode>
       <items>
@@ -214,19 +191,19 @@
         <item>Autre (&#224; pr&#233;ciser)</item>
       </items>
       <data_source>
-        <type>ds_lien_de_parente</type>
+        <type>ds_lien_de_parente_1</type>
       </data_source>
       <in_filters type="bool">False</in_filters>
       <display_disabled_items type="bool">False</display_disabled_items>
       <initial_zoom type="str">13</initial_zoom>
       <use_hint_as_first_option type="bool">True</use_hint_as_first_option>
-      <image_desktop_size type="int">150</image_desktop_size>
-      <image_mobile_size type="int">75</image_mobile_size>
+      <image_desktop_size type="str">150</image_desktop_size>
+      <image_mobile_size type="str">75</image_mobile_size>
       <id type="str">10</id>
     </field>
     <field>
       <type>string</type>
-      <label type="str">Si Autre, pr&#233;ciser le lien de parent&#233;</label>
+      <label type="str">Si autre, pr&#233;ciser la relation avec la personne concern&#233;e</label>
       <condition>
         <type>django</type>
         <value>form_var_parente_raw == 'autre'</value>
@@ -236,11 +213,28 @@
         <item>validation</item>
         <item>summary</item>
       </display_locations>
-      <prefill>
-        <type>none</type>
-      </prefill>
       <anonymise type="str">final</anonymise>
       <id type="str">8</id>
+    </field>
+    <field>
+      <type>file</type>
+      <label type="str">Concerne une autre personne : pi&#232;ce justificative</label>
+      <condition>
+        <type>django</type>
+        <value>form_var_parente == "Autre (&#224; pr&#233;ciser)"</value>
+      </condition>
+      <required type="bool">True</required>
+      <hint type="str">&lt;p&gt;Veuillez d&#233;poser un document qui justifie votre demande pour un tiers (copie de carte d'identit&#233;, procuration ou raison l&#233;gale).&lt;/p&gt;</hint>
+      <varname type="str">piece_justificative_tiers</varname>
+      <display_locations>
+        <item>validation</item>
+        <item>summary</item>
+      </display_locations>
+      <anonymise type="str">final</anonymise>
+      <allow_portfolio_picking type="bool">False</allow_portfolio_picking>
+      <automatic_image_resize type="bool">False</automatic_image_resize>
+      <storage type="str">default</storage>
+      <id type="str">119</id>
     </field>
     <field>
       <type>page</type>
