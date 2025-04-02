@@ -439,33 +439,6 @@
       <id type="str">95</id>
     </field>
     <field>
-      <type>item</type>
-      <label type="str">Pays</label>
-      <required type="bool">True</required>
-      <hint type="str">Choisissez une option</hint>
-      <varname type="str">pays_perscon</varname>
-      <display_locations>
-        <item>validation</item>
-        <item>summary</item>
-      </display_locations>
-      <extra_css_class type="str">grid-2-4</extra_css_class>
-      <prefill>
-        <type>none</type>
-      </prefill>
-      <anonymise type="str">no</anonymise>
-      <display_mode type="str">list</display_mode>
-      <items />
-      <data_source>
-        <type>pays</type>
-      </data_source>
-      <in_filters type="bool">False</in_filters>
-      <display_disabled_items type="bool">False</display_disabled_items>
-      <use_hint_as_first_option type="bool">True</use_hint_as_first_option>
-      <image_desktop_size type="int">150</image_desktop_size>
-      <image_mobile_size type="int">75</image_mobile_size>
-      <id type="str">97</id>
-    </field>
-    <field>
       <type>email</type>
       <label type="str">Adresse e-mail</label>
       <required type="bool">True</required>
